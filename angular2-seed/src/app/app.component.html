@@ -1,0 +1,16 @@
+<h2 style="text-align: center; font-weight: bold;">
+  My Books Shop
+</h2>
+
+<button class="btn btn-secondary float-right btn-sm" (click)="addBook()" style="margin-left: 10%">Add New Book</button>
+
+  <div class="container">
+    <div *ngFor="let b of books" style="margin-top: 2%">
+      <book [data]="b" (delete)="deleteBook($event)"></book>
+    </div>
+  </div>
+
+
+<footer>
+  © Nadav 2017
+</footer>
