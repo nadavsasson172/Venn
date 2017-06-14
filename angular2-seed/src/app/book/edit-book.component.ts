@@ -58,7 +58,7 @@ export class EditBookModalComponent extends DialogComponent<EditBookModel, null>
   save() {
     var result = this.bookService.checkTitleValidity(this.book);
 
-    if (result.flag) {
+    if (result.flag || this.book.title === this.titleOfEdittedBook) {
       this.errTitleAlreadyExists = false;
       if(!this.authorFieldIsEmpty()) {
         this.bookService.update(this.book, this.titleOfEdittedBook);
